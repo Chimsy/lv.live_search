@@ -15,10 +15,16 @@
     <br/>
     <h3 align="center">Full Text Search in Laravel 6 using Ajax</h3>
     <br/>
+
     <div class="row">
         <div class="col-md-10">
-            <input type="text" name="full_text_search" id="full_text_search" class="form-control" placeholder="Search"
-                   value="">
+            <input
+                    type="text"
+                    name="full_text_search"
+                    id="full_text_search"
+                    class="form-control"
+                    placeholder="Search"
+                    value="">
         </div>
         <div class="col-md-2">
             @csrf
@@ -26,6 +32,7 @@
         </div>
     </div>
     <br/>
+
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
@@ -82,8 +89,14 @@
         }
 
         $('#search').click(function () {
-            var full_text_search_query = $('#full_text_search').val();
+            let full_text_search_query = $('#full_text_search').val();
             load_data(full_text_search_query);
+        });
+
+        $('#full_text_search').keyup(function () {
+            let full_text_search_query = $('#full_text_search').val();
+            load_data(full_text_search_query);
+
         });
 
     });
